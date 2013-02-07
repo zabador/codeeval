@@ -4,41 +4,46 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class shell{
+public class multiples{
 
-    private File file;
-    private BufferedReader in;
-    String line;
-    ArrayList<String> line = new ArrayList<String>();
+    private static ArrayList<String> input = new ArrayList<String>(); 
 
     public static void main(String[] args){
+
         
         openFile(args[0]);
 
-        line = in.readLine();
-        while(line != null){
+        for(int i=0; i<input.size(); i++){
 
-            // do something
-            
-            line = in.readLine();
+            int index = 0;
+            for(String a : input.get(i).split(",")){
+
+                // add words here
+                index++;
+            }
+            // logic goes here
+           
         }
-
-
-
-
-        in.close();
         System.exit(0);
+
     }
 
-    public static void openFile(String file){
+    
+    public static void openFile(String path){
 
         try{
+            File file = new File(path);
+            BufferedReader in = new BufferedReader(new FileReader(file));
 
-            this.file = new File(file);
-            in = new BufferedReader(new FileReader(this.file));
+            String s;
+            while((s = in.readLine()) != null){
+                if(s.trim().length()>0)
+                    input.add(s);
+            }
+            in.close();
         }catch(IOException ioe){
             System.out.println("File Read Error: " + ioe.getMessage());
         }
+        
     }
 }
-
