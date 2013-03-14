@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 
-public class shell{
+public class multiples{
 
     private static ArrayList<String> input = new ArrayList<String>(); 
 
