@@ -22,13 +22,12 @@ public class Main {
 				int key = Character.getNumericValue(number.charAt(j));
 				int sum = 0;
 				for (int m = 0; m<number.length(); m++) {
-					if(Character.getNumericValue(number.charAt(m)) == key) {
+					if(Character.getNumericValue(number.charAt(m)) == j) {
 						sum++;
 					}
 				
 				}
-				System.out.println("sum = "+ sum + " j = "+j);
-				if (sum != j) {
+				if (sum != key) {
 					flag = 0;
 				}
 			}
